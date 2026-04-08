@@ -22,12 +22,11 @@ export default function TipCalculator() {
       */
 
   return (
-    <div className="parent-container flex flex-col items-center justify-between min-h-screen min-w-screen bg-teal-100">
-      <header className="text-3xl text-center text-slate-500 uppercase font-medium tracking-[.5rem] p-[20px]">
-        <p>spli</p>
-        <p>tter</p>
+    <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-2 min-h-screen min-w-screen bg-teal-100">
+      <header className="text-3xl flex items-center justify-center text-slate-500 uppercase font-medium tracking-[.5rem] p-[20px]">
+        splitter
       </header>
-      <main className="bg-white flex flex-col items-center gap-5 rounded-t-4xl w-full min-h-[1000px] p-[40px]">
+      <main className="bg-white flex flex-col items-center gap-5 rounded-t-4xl w-full p-[40px]">
         <fieldset>
           <label></label>
           <input />
