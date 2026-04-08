@@ -22,11 +22,12 @@ export default function TipCalculator() {
       */
 
   return (
-    <div className="parent-container min-h-screen bg-Teal-300">
-      <header>
-        splitter
+    <div className="parent-container flex flex-col items-center justify-between min-h-screen min-w-screen bg-teal-100">
+      <header className="text-3xl text-center text-slate-500 uppercase font-medium tracking-[.5rem] p-[20px]">
+        <p>spli</p>
+        <p>tter</p>
       </header>
-      <main>
+      <main className="bg-white flex flex-col items-center gap-5 rounded-t-4xl w-full min-h-[1000px] p-[40px]">
         <fieldset>
           <label></label>
           <input />
@@ -62,12 +63,12 @@ export default function TipCalculator() {
             </div>
           </div>
         </section>
+
+        <footer className="attribution fixed bottom-[40px] text-center w-[250px]">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><span className="font-medium text-blue-600">Frontend Mentor</span></a>. 
+          Coded by <a href="#"><span className="font-medium text-blue-600" target="_blank">Joshua Martinez</span></a>.
+        </footer>
       </main>
-      
-      <footer className="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-        Coded by <a href="#">Your Name Here</a>.
-      </footer>
     </div>
   )
 }
