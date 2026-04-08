@@ -1,7 +1,6 @@
 export default function TipCalculator() {
-  return (
-    <div>
-      Bill
+  /*
+  Bill
 
       Select Tip %
       5%
@@ -20,6 +19,50 @@ export default function TipCalculator() {
       / person
 
       Reset
+      */
+
+  return (
+    <div className="parent-container">
+      <header>
+        splitter
+      </header>
+      <main>
+        <fieldset>
+          <label></label>
+          <input />
+        </fieldset>
+
+        <fieldset>
+          <label></label>
+        </fieldset>
+
+        <fieldset>
+          <label></label>
+          <input />
+        </fieldset>
+
+        <section>
+          <div>
+            <div>
+              <p>Tip Amount</p>
+              <p>/ person</p>
+            </div>
+            <div>
+              $4.27
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <p>Total</p>
+              <p>/ person</p>
+            </div>
+            <div>
+              $32.79
+            </div>
+          </div>
+        </section>
+      </main>
       
       <footer class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
