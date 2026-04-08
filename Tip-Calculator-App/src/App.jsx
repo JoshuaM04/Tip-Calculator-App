@@ -22,7 +22,7 @@ export default function TipCalculator() {
       */
 
   return (
-    <div className="parent-container">
+    <div className="parent-container min-h-screen bg-Teal-300">
       <header>
         splitter
       </header>
@@ -64,7 +64,7 @@ export default function TipCalculator() {
         </section>
       </main>
       
-      <footer class="attribution">
+      <footer className="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
         Coded by <a href="#">Your Name Here</a>.
       </footer>
