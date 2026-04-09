@@ -1,4 +1,5 @@
 export default function TipCalculator() {
+  const tipValues = ["5%", "10%", "15%", "25%", "50%", "Custom"];
 
   return (
     <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-screen bg-teal-100 box-border">
@@ -6,23 +7,30 @@ export default function TipCalculator() {
         splitter
       </header>
 
-      <main className="bg-white grid grid-rows-2 grid-cols-1 gap-5 items-start rounded-t-4xl w-full p-[40px]">
-        <form action="" className="grid grid-rows-3 grid-cols-1 gap-10">
-          <fieldset>
-            <label htmlFor="bill-amount" className="font-bold tracking-widest text-md text-slate-500">Bill</label>
-            <br />
-            <input id="bill-amount" type="text" className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" />
-          </fieldset>
+      <main className="bg-white grid auto-rows-min grid-cols-1 gap-10 rounded-t-4xl w-full min-h-auto p-[40px]">
+        <fieldset>
+          <label htmlFor="bill-amount" className="font-bold tracking-widest text-md text-slate-500">Bill</label>
+          <br />
+          <input id="bill-amount" type="text" className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" />
+        </fieldset>
 
-          <fieldset>
-            <p className="font-bold tracking-widest text-md text-slate-500">Select Tip %</p>
-          </fieldset>
+        <fieldset>
+          <p className="font-bold tracking-widest text-md text-slate-500">Select Tip %</p>
+          <section className="grid grid-rows-3 grid-cols-2 gap-5">
+            {
+              tipValues.map((item, index) => {
+                return (
+                  <button key={index} className="bg-teal-900 rounded-sm w-full p-[10px] font-bold text-xl text-white">{item}</button>
+                )
+              })
+            }
+          </section>
+        </fieldset>
 
-          <fieldset>
-            <label htmlFor="people-amount" className="font-bold tracking-widest text-md text-slate-500">Number of People</label>
-            <input id="people-amount" type="text" className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-person.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" />
-          </fieldset>
-        </form>
+        <fieldset>
+          <label htmlFor="people-amount" className="font-bold tracking-widest text-md text-slate-500">Number of People</label>
+          <input id="people-amount" type="text" className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-person.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" />
+        </fieldset>
 
         <section className="bg-teal-800 rounded-xl p-[20px] place-self-end w-full flex flex-col gap-5">
           <div className="flex justify-between items-center">
@@ -48,7 +56,7 @@ export default function TipCalculator() {
           <button className="uppercase bg-teal-500 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900">reset</button>
         </section>
 
-        <footer className="attribution relative bottom-0 text-center w-[250px] place-self-center font-medium text-teal-900">
+        <footer className="attribution text-center w-[250px] place-self-center font-medium text-teal-900">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><span className="font-medium text-blue-600">Frontend Mentor</span></a>. 
           Coded by <a href="#"><span className="font-medium text-blue-600" target="_blank">Joshua Martinez</span></a>.
         </footer>
