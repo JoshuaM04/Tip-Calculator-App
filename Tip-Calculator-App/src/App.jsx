@@ -13,7 +13,7 @@ export default function TipCalculator() {
           <br />
           <input id="bill-amount" type="text" 
                  className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
-                 onBlur={(evt) => { console.log(evt.target.value); }}
+                 onBlur={(event) => { console.log(event.target.value); }}
           />
         </fieldset>
 
@@ -29,7 +29,7 @@ export default function TipCalculator() {
             }
             <input placeholder="Custom" type="text" 
                    className="bg-gray-100 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 placeholder:text-center text-center" 
-                   onBlur={(evt) => { console.log(evt.target.value); }}
+                   onBlur={(event) => { console.log(event.target.value); }}
             />
           </section>
         </fieldset>
@@ -38,7 +38,7 @@ export default function TipCalculator() {
           <label htmlFor="people-amount" className="font-bold tracking-widest text-md text-slate-500">Number of People</label>
           <input id="people-amount" type="text" 
                  className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-person.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
-                 onBlur={(evt) => { console.log(evt.target.value); }}
+                 onBlur={(event) => { console.log(event.target.value); }}
           />
         </fieldset>
 
