@@ -1,8 +1,46 @@
+import { useState } from 'react';
+
+function CalculateTip(props) {
+  let tip = props.tip;
+  let bill = props.bill;
+  let customTip = props.customTip;
+  let quantity = props.quantity;
+  let tipAmount = props.tipAmount;
+
+  if (tip === undefined) {
+    tipAmount = (bill * tip) / quantity;
+  } else {
+    tipAmount = (bill * customTip) / quantity;
+  }
+
+  // Why is this an [object object]?
+  console.log("Bill Amount");
+  console.log(bill);
+
+  return tipAmount;
+}
+
+function CalculateTotal(props) {
+  let bill = props.bill;
+  let quantity = props.quantity;
+  let tipAmount = props.tipAmount;
+  let total = props.total;
+
+  total = (bill / quantity) + tipAmount
+
+}
+
 export default function TipCalculator() {
-  const tipValues = ["5%", "10%", "15%", "25%", "50%"];
+  const tipValues = [5, 10, 15, 25, 50];
+  const [bill, setBill] = useState();
+  const [activeTip, setActiveTip] = useState(undefined);
+  const [customTip, setCustomTip] = useState(undefined);
+  const [quantity, setQuantity] = useState();
+  const [tipAmount, setTipAmount] = useState();
+  const [total, setTotal] = useState();
 
   return (
-    <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-screen bg-teal-100 box-border">
+    <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-[375px] min-w-screen box-border">
       <header className="text-3xl flex items-center justify-center text-slate-500 uppercase font-medium tracking-[.5rem] p-[20px]">
         splitter
       </header>
@@ -13,7 +51,7 @@ export default function TipCalculator() {
           <br />
           <input id="bill-amount" type="text" 
                  className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
-                 onBlur={(event) => { console.log(event.target.value); }}
+                 onChange={(event) => setBill(event.target.value)}
           />
         </fieldset>
 
@@ -23,13 +61,13 @@ export default function TipCalculator() {
             {
               tipValues.map((item, index) => {
                 return (
-                  <button key={index} className="bg-teal-900 rounded-sm w-full p-[10px] font-bold text-xl text-white hover:cursor-pointer hover:bg-teal-800 active:bg-teal-500 active:text-teal-900">{item}</button>
+                  <button key={index} onClick={(event) => setActiveTip(event.target.value)} className="bg-teal-900 rounded-sm w-full p-[10px] font-bold text-xl text-white hover:cursor-pointer hover:bg-teal-800 active:bg-teal-500 active:text-teal-900">{item}%</button>
                 )
               })
             }
             <input placeholder="Custom" type="text" 
                    className="bg-gray-100 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 placeholder:text-center text-center" 
-                   onBlur={(event) => { console.log(event.target.value); }}
+                   onChange={(event) => setCustomTip(event.target.value)}
             />
           </section>
         </fieldset>
@@ -38,7 +76,7 @@ export default function TipCalculator() {
           <label htmlFor="people-amount" className="font-bold tracking-widest text-md text-slate-500">Number of People</label>
           <input id="people-amount" type="text" 
                  className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-person.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
-                 onBlur={(event) => { console.log(event.target.value); }}
+                 onChange={(event) => setQuantity(event.target.value)}
           />
         </fieldset>
 
@@ -49,7 +87,15 @@ export default function TipCalculator() {
               <p className="text-slate-400">/ person</p>
             </div>
             <div>
-              <p className="text-3xl text-teal-500 font-bold">$4.27</p>
+              <p className="text-3xl text-teal-500 font-bold">
+                <CalculateTip
+                  bill={{bill}}
+                  tip={{activeTip}}
+                  customTip={{customTip}}
+                  quantity={{quantity}}
+                  tipAmount={{tipAmount}}
+                />
+              </p>
             </div>
           </div>
 
@@ -59,7 +105,14 @@ export default function TipCalculator() {
               <p className="text-slate-400">/ person</p>
             </div>
             <div>
-              <p className="text-3xl text-teal-500 font-bold">$32.79</p>
+              <p className="text-3xl text-teal-500 font-bold">
+                <CalculateTotal
+                  bill={{bill}}
+                  quantity={{quantity}}
+                  tipAmount={{tipAmount}}
+                  total={{total}}
+                />
+              </p>
             </div>
           </div>
 
