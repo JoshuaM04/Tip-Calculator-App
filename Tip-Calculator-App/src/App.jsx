@@ -11,7 +11,10 @@ export default function TipCalculator() {
         <fieldset>
           <label htmlFor="bill-amount" className="font-bold tracking-widest text-md text-slate-500">Bill</label>
           <br />
-          <input id="bill-amount" type="text" className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" />
+          <input id="bill-amount" type="text" 
+                 className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
+                 onBlur={(evt) => { console.log(evt.target.value); }}
+          />
         </fieldset>
 
         <fieldset className="flex flex-col gap-5">
@@ -24,13 +27,19 @@ export default function TipCalculator() {
                 )
               })
             }
-            <input placeholder="Custom" type="text" className="bg-gray-100 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 placeholder:text-center text-center" />
+            <input placeholder="Custom" type="text" 
+                   className="bg-gray-100 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 placeholder:text-center text-center" 
+                   onBlur={(evt) => { console.log(evt.target.value); }}
+            />
           </section>
         </fieldset>
 
         <fieldset>
           <label htmlFor="people-amount" className="font-bold tracking-widest text-md text-slate-500">Number of People</label>
-          <input id="people-amount" type="text" className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-person.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" />
+          <input id="people-amount" type="text" 
+                 className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-person.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
+                 onBlur={(evt) => { console.log(evt.target.value); }}
+          />
         </fieldset>
 
         <section className="bg-teal-800 rounded-xl p-[20px] place-self-end w-full flex flex-col gap-5">
@@ -57,7 +66,7 @@ export default function TipCalculator() {
           <button className="uppercase bg-teal-500 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 hover:cursor-pointer hover:bg-teal-400 active:bg-teal-300 active:text-white">reset</button>
         </section>
 
-        <footer className="attribution text-center w-[250px] place-self-center font-medium text-teal-900">
+        <footer className="attribution fixed bottom-0 mb-[10px] text-center w-[250px] place-self-center font-medium text-teal-900">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><span className="font-medium text-blue-600">Frontend Mentor</span></a>. 
           Coded by <a href="#"><span className="font-medium text-blue-600" target="_blank">Joshua Martinez</span></a>.
         </footer>
