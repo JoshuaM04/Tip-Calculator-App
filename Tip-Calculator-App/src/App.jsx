@@ -26,7 +26,7 @@ function CalculateTotal(props) {
   let tipAmount = props.tipAmount;
   let total = props.total;
 
-  total = (bill / quantity) + tipAmount
+  total = (bill / quantity) + tipAmount;
 
 }
 
