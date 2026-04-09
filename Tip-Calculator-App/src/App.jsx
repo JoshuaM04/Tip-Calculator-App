@@ -55,6 +55,9 @@ export default function TipCalculator() {
   const [quantity, setQuantity] = useState(0);
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
+  const billRef = useRef(null);
+  const customTipRef = useRef(null);
+  const quantityRef = useRef(null);
 
   return (
     <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-[375px] min-w-screen bg-teal-100 box-border">
@@ -69,6 +72,7 @@ export default function TipCalculator() {
           <input id="bill-amount" type="text" 
                  className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
                  onChange={(event) => setBill(event.target.value)}
+                 ref={billRef}
           />
         </fieldset>
 
@@ -83,8 +87,10 @@ export default function TipCalculator() {
               })
             }
             <input placeholder="Custom" type="text" 
+                   id="custom-tip"
                    className="bg-gray-100 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 placeholder:text-center text-center" 
                    onChange={(event) => { setCustomTip(event.target.value); setActiveTip(0); }}
+                   ref={customTipRef}
             />
           </section>
         </fieldset>
@@ -94,6 +100,7 @@ export default function TipCalculator() {
           <input id="people-amount" type="text" 
                  className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-person.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
                  onChange={(event) => setQuantity(event.target.value)}
+                 ref={quantityRef}
           />
         </fieldset>
 
@@ -131,7 +138,7 @@ export default function TipCalculator() {
 
           <button 
             className="uppercase bg-teal-500 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 hover:cursor-pointer hover:bg-teal-400 active:bg-teal-300 active:text-white"
-            
+            onClick={() => {billRef.current = ''; customTipRef.current = ''; quantityRef.current = ''}}
           >
             reset
           </button>
