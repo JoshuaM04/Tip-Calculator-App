@@ -1,5 +1,5 @@
 export default function TipCalculator() {
-  const tipValues = ["5%", "10%", "15%", "25%", "50%", "Custom"];
+  const tipValues = ["5%", "10%", "15%", "25%", "50%"];
 
   return (
     <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-screen bg-teal-100 box-border">
@@ -14,16 +14,17 @@ export default function TipCalculator() {
           <input id="bill-amount" type="text" className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" />
         </fieldset>
 
-        <fieldset>
+        <fieldset className="flex flex-col gap-5">
           <p className="font-bold tracking-widest text-md text-slate-500">Select Tip %</p>
           <section className="grid grid-rows-3 grid-cols-2 gap-5">
             {
               tipValues.map((item, index) => {
                 return (
-                  <button key={index} className="bg-teal-900 rounded-sm w-full p-[10px] font-bold text-xl text-white">{item}</button>
+                  <button key={index} className="bg-teal-900 rounded-sm w-full p-[10px] font-bold text-xl text-white hover:cursor-pointer hover:bg-teal-800 active:bg-teal-500 active:text-teal-900">{item}</button>
                 )
               })
             }
+            <input placeholder="Custom" type="text" className="bg-gray-100 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 placeholder:text-center text-center" />
           </section>
         </fieldset>
 
@@ -53,7 +54,7 @@ export default function TipCalculator() {
             </div>
           </div>
 
-          <button className="uppercase bg-teal-500 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900">reset</button>
+          <button className="uppercase bg-teal-500 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 hover:cursor-pointer hover:bg-teal-400 active:bg-teal-300 active:text-white">reset</button>
         </section>
 
         <footer className="attribution text-center w-[250px] place-self-center font-medium text-teal-900">
