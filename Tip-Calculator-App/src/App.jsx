@@ -18,8 +18,6 @@ function CalculateTip(props) {
   } else {
     tipValue = (bill * activeTip) / quantity;
   }
-  
-  console.log(props);
 
   return (
     <p className="text-3xl text-teal-500 font-bold">${tipValue.toFixed(2)}</p>
@@ -39,8 +37,6 @@ function CalculateTotal(props) {
   } else {
     total = (bill / quantity) + tipValue;
   }
-
-  console.log(tipValue);
 
   return (
     <p className="text-3xl text-teal-500 font-bold">${total.toFixed(2)}</p>
