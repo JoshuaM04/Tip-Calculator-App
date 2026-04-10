@@ -1,47 +1,5 @@
 import { useState, useRef } from 'react';
-
-function CalculateTip(props) {
-  let activeTip = parseFloat(props.tip) / 100.00;
-  let bill = props.bill;
-  let customTip = parseFloat(props.customTip) / 100.00;
-  let quantity = props.quantity;
-  let tipValue = props.tipAmount;
-  
-  if (!quantity) {
-    tipValue = 0;
-  } else if (quantity === 0) {
-    tipValue = 0;
-  } else if (activeTip === 0 && customTip === 0) {
-    tipValue = 0;
-  } else if (activeTip === 0) {
-    tipValue = (bill * customTip) / quantity;
-  } else {
-    tipValue = (bill * activeTip) / quantity;
-  }
-
-  return (
-    <p className="text-3xl text-teal-500 font-bold">${tipValue.toFixed(2)}</p>
-  )
-}
-
-function CalculateTotal(props) {
-  let bill = props.bill;
-  let quantity = props.quantity;
-  let tipValue = props.tipAmount;
-  let total = props.total;
-
-  if (bill === 0) {
-    total = 0;
-  } else if (quantity === 0 || (!quantity)) {
-    total = 0;
-  } else {
-    total = (bill / quantity) + tipValue;
-  }
-
-  return (
-    <p className="text-3xl text-teal-500 font-bold">${total.toFixed(2)}</p>
-  )
-}
+import {calculateTip, calculateTotal} from './utils/helper.jsx';
 
 export default function TipCalculator() {
   const tipValues = [5, 10, 15, 25, 50];
@@ -108,13 +66,9 @@ export default function TipCalculator() {
               <p className="text-slate-400">/ person</p>
             </div>
             <div>
-              <CalculateTip
-                bill={bill}
-                tip={activeTip}
-                customTip={customTip}
-                quantity={quantity}
-                tipAmount={tipAmount}
-              />
+              <p className="text-3xl text-teal-500 font-bold">
+                ${calculateTip(bill, activeTip, customTip, quantity, tipAmount)}
+              </p>
             </div>
           </div>
 
@@ -124,12 +78,9 @@ export default function TipCalculator() {
               <p className="text-slate-400">/ person</p>
             </div>
             <div>
-              <CalculateTotal
-                bill={bill}
-                quantity={quantity}
-                tipAmount={tipAmount}
-                total={total}
-              />
+              <p className="text-3xl text-teal-500 font-bold">
+                ${calculateTotal(bill, quantity, tipAmount, total)}
+              </p>
             </div>
           </div>
 
