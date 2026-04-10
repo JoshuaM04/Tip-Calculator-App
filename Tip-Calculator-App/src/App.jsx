@@ -76,7 +76,11 @@ export default function TipCalculator() {
             {
               tipValues.map((item, index) => {
                 return (
-                  <button key={index} onClick={() => { setActiveTip(item); setCustomTip(''); }} className="bg-teal-900 rounded-sm w-full p-[10px] font-bold text-xl text-white hover:cursor-pointer hover:bg-teal-800 active:bg-teal-500 active:text-teal-900">{item}%</button>
+                  <button key={index} onClick={() => { setActiveTip(item); setCustomTip(''); }} 
+                    className={`rounded-sm w-full p-[10px] font-bold text-xl hover:cursor-pointer hover:bg-teal-500 ${activeTip === item ? 'bg-teal-500 text-teal-900' : 'bg-teal-900 text-white'}`}
+                  >
+                    {item}%
+                  </button>
                 )
               })
             }
