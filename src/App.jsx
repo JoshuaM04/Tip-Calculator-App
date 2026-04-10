@@ -135,7 +135,13 @@ export default function TipCalculator() {
 
           <button 
             className="uppercase bg-teal-500 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 hover:cursor-pointer hover:bg-teal-400 active:bg-teal-300 active:text-white"
-            onClick={() => {setBill(''); setCustomTip(''); setQuantity(''); }}
+            onClick={
+              () => {
+                setBill(''); 
+                setCustomTip(''); 
+                setQuantity(''); 
+              }
+            }
           >
             reset
           </button>
