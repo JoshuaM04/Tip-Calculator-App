@@ -45,15 +45,13 @@ function CalculateTotal(props) {
 
 export default function TipCalculator() {
   const tipValues = [5, 10, 15, 25, 50];
-  const [bill, setBill] = useState(0);
+  const [bill, setBill] = useState('');
   const [activeTip, setActiveTip] = useState(0);
-  const [customTip, setCustomTip] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [customTip, setCustomTip] = useState('');
+  const [quantity, setQuantity] = useState('');
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
-  const billRef = useRef(null);
-  const customTipRef = useRef(null);
-  const quantityRef = useRef(null);
+  
 
   return (
     <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-[375px] min-w-screen bg-teal-100 box-border">
@@ -68,7 +66,7 @@ export default function TipCalculator() {
           <input id="bill-amount" type="text" 
                  className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
                  onChange={(event) => setBill(event.target.value)}
-                 ref={billRef}
+                 value={bill}
           />
         </fieldset>
 
@@ -78,7 +76,7 @@ export default function TipCalculator() {
             {
               tipValues.map((item, index) => {
                 return (
-                  <button key={index} onClick={() => { setActiveTip(item); setCustomTip(0); }} className="bg-teal-900 rounded-sm w-full p-[10px] font-bold text-xl text-white hover:cursor-pointer hover:bg-teal-800 active:bg-teal-500 active:text-teal-900">{item}%</button>
+                  <button key={index} onClick={() => { setActiveTip(item); setCustomTip(''); }} className="bg-teal-900 rounded-sm w-full p-[10px] font-bold text-xl text-white hover:cursor-pointer hover:bg-teal-800 active:bg-teal-500 active:text-teal-900">{item}%</button>
                 )
               })
             }
@@ -86,7 +84,7 @@ export default function TipCalculator() {
                    id="custom-tip"
                    className="bg-gray-100 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 placeholder:text-center text-center" 
                    onChange={(event) => { setCustomTip(event.target.value); setActiveTip(0); }}
-                   ref={customTipRef}
+                   value={customTip}
             />
           </section>
         </fieldset>
@@ -96,7 +94,7 @@ export default function TipCalculator() {
           <input id="people-amount" type="text" 
                  className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-person.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
                  onChange={(event) => setQuantity(event.target.value)}
-                 ref={quantityRef}
+                 value={quantity}
           />
         </fieldset>
 
@@ -134,13 +132,13 @@ export default function TipCalculator() {
 
           <button 
             className="uppercase bg-teal-500 rounded-sm w-full p-[10px] font-bold text-xl text-teal-900 hover:cursor-pointer hover:bg-teal-400 active:bg-teal-300 active:text-white"
-            onClick={() => {billRef.current = ''; customTipRef.current = ''; quantityRef.current = ''}}
+            onClick={() => {setBill(''); setCustomTip(''); setQuantity(''); }}
           >
             reset
           </button>
         </section>
 
-        <footer className="attribution fixed bottom-0 mb-[10px] text-center w-[250px] place-self-center font-medium text-teal-900">
+        <footer className="attribution relative bottom-0 mb-[10px] text-center w-[250px] place-self-center font-medium text-teal-900">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><span className="font-medium text-blue-600">Frontend Mentor</span></a>. 
           Coded by <a href="#"><span className="font-medium text-blue-600" target="_blank">Joshua Martinez</span></a>.
         </footer>
