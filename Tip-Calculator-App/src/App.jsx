@@ -142,7 +142,7 @@ export default function TipCalculator() {
           </button>
         </section>
 
-        <footer className="attribution relative bottom-0 mb-[10px] text-center w-[250px] place-self-center font-medium text-teal-900">
+        <footer className="attribution absolute bottom-0 mb-[40px] text-center w-[250px] place-self-center font-medium text-teal-900">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><span className="font-medium text-blue-600">Frontend Mentor</span></a>. 
           Coded by <a href="#"><span className="font-medium text-blue-600" target="_blank">Joshua Martinez</span></a>.
         </footer>
