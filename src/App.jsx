@@ -62,7 +62,6 @@ export default function TipCalculator() {
       <main className="bg-white grid auto-rows-min grid-cols-1 gap-10 rounded-t-4xl w-full min-h-auto p-[40px]">
         <fieldset>
           <label htmlFor="bill-amount" className="font-bold tracking-widest text-md text-slate-500">Bill</label>
-          <br />
           <input id="bill-amount" type="text" 
                  className="bg-gray-100 w-full rounded-sm min-h-[40px] bg-[url(assets/images/icon-dollar.svg)] bg-position-[center_left_20px] bg-no-repeat text-right p-[10px] text-teal-900 text-2xl font-bold" 
                  onChange={(event) => setBill(event.target.value)}
