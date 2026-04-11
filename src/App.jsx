@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import {calculateTip, calculateTotal} from './utils/helper.jsx';
+import {calculateTip, calculateTotal} from './utils/helper.js';
 
 export default function TipCalculator() {
   const tipValues = [5, 10, 15, 25, 50];
