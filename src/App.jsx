@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import {calculateTip, calculateTotal} from './utils/helper.js';
+import logo from './assets/images/logo.svg'
 
 export default function TipCalculator() {
   const tipValues = [5, 10, 15, 25, 50];
@@ -14,7 +15,7 @@ export default function TipCalculator() {
   return (
     <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-[375px] min-w-screen bg-teal-100 box-border lg:flex lg:flex-col lg:items-center lg:justify-center">
       <header className="text-3xl flex items-center justify-center text-slate-500 uppercase font-medium tracking-[.5rem] p-[20px] lg:fixed lg:top-0 lg:mt-40">
-        splitter
+        <img src={logo} alt="Splitter heading logo." />
       </header>
 
       <main className="bg-white grid auto-rows-min grid-cols-1 gap-10 rounded-t-4xl w-full min-h-auto p-[40px] lg:grid-cols-2 lg:auto-rows-min lg:h-fit lg:w-[1000px] shadow-xl lg:rounded-4xl">
