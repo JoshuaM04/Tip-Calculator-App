@@ -6,9 +6,9 @@ export function calculateTip(bill, activeTip, customTip, quantity, tipAmount) {
     tipAmount = 0;
   } else if (quantity === 0) {
     tipAmount = 0;
-  } else if (activeTipVal === 0 && customTipVal === 0) {
+  } else if (activeTip === 0 && customTip === '') {
     tipAmount = 0;
-  } else if (activeTipVal === 0) {
+  } else if (activeTip === 0) {
     tipAmount = (bill * customTipVal) / quantity;
   } else {
     tipAmount = (bill * activeTipVal) / quantity;
