@@ -101,7 +101,7 @@ export default function TipCalculator() {
           </button>
         </section>
 
-        <div className="mt-20 text-center w-[250px] place-self-center font-medium text-teal-900 md:hidden">
+        <div className="mt-10 text-center w-[250px] place-self-center font-medium text-teal-900 md:hidden">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><span className="font-medium text-blue-600">Frontend Mentor</span></a>. 
           Coded by <a href="#"><span className="font-medium text-blue-600" target="_blank">Joshua Martinez</span></a>.
         </div>
