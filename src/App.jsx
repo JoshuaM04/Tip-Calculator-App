@@ -101,10 +101,10 @@ export default function TipCalculator() {
           </button>
         </section>
 
-        <footer className="attribution relative top-40 mb-[10px] text-center w-[250px] place-self-center font-medium text-teal-900 md:hidden">
+        <div className="relative top-40 mb-[10px] text-center w-[250px] place-self-center font-medium text-teal-900 md:hidden">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><span className="font-medium text-blue-600">Frontend Mentor</span></a>. 
           Coded by <a href="#"><span className="font-medium text-blue-600" target="_blank">Joshua Martinez</span></a>.
-        </footer>
+        </div>
       </main>
 
       <footer className="attribution relative top-60 mb-[10px] text-center w-[250px] place-self-center font-medium text-teal-900 max-md:hidden">
