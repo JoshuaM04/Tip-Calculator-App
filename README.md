@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Vercel](https://tip-calculator-app-theta-five.vercel.app/)
+- Live Site URL: [Vercel](https://tip-calculator-app-brown-three.vercel.app/)
 
 ## My process
 
@@ -75,6 +75,6 @@ const proudOfThisFunc = () => {
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@JoshuaM04](https://www.frontendmentor.io/profile/JoshuaM04)
 
 ## Acknowledgments
