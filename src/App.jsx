@@ -13,8 +13,8 @@ export default function TipCalculator() {
   
 
   return (
-    <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-[375px] min-w-screen bg-teal-100 box-border md:flex md:flex-col md:items-center md:justify-center">
-      <header className="text-3xl flex items-center justify-center text-slate-500 uppercase font-medium tracking-[.5rem] p-[20px] md:relative md:bottom-20">
+    <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-[375px] bg-teal-100 box-border md:flex md:flex-col md:items-center md:justify-center md:gap-20">
+      <header className="p-[20px] md:relative md:bottom-20">
         <img src={logo} alt="Splitter heading logo." />
       </header>
 
@@ -107,7 +107,7 @@ export default function TipCalculator() {
         </div>
       </main>
 
-      <footer className="attribution relative top-60 mb-[10px] text-center w-[250px] place-self-center font-medium text-teal-900 max-md:hidden">
+      <footer className="attribution text-center w-[250px] place-self-center font-medium text-teal-900 max-md:hidden">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><span className="font-medium text-blue-600">Frontend Mentor</span></a>. 
         Coded by <a href="#"><span className="font-medium text-blue-600" target="_blank">Joshua Martinez</span></a>.
       </footer>
