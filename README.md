@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./Tip-Calculator-App/src/assets/design/desktopSolution.png)
+![](./src/assets/design/desktopSolution.png)
 
 ### Links
 
