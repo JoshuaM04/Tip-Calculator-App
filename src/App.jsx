@@ -14,7 +14,7 @@ export default function TipCalculator() {
 
   return (
     <div className="parent-container grid grid-rows-[150px_1fr] grid-cols-1 gap-5 min-h-screen min-w-[375px] bg-teal-100 box-border md:flex md:flex-col md:items-center md:justify-center md:gap-20">
-      <header className="p-[20px] md:relative md:bottom-20">
+      <header className="flex items-center justify-center p-[20px] md:relative md:bottom-20">
         <img src={logo} alt="Splitter heading logo." />
       </header>
 
